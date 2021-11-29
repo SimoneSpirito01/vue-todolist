@@ -30,9 +30,9 @@ header h1 {
 /* main */
 
 .container {
-    min-width: 200px;
+    min-width: 300px;
     width: 30%;
-    height: 500px;
+    min-height: 500px;
     margin: 0 auto;
     border-radius: 20px;
     background-color: white;
