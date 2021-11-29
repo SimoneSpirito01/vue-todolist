@@ -6,3 +6,92 @@
     box-sizing: border-box;
     font-family: 'Outfit', sans-serif;
 }
+
+body {
+    background-color: #f0efe9;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+/* header */
+
+header h1 {
+    text-align: center;
+    margin: 60px 0 30px;
+    font-weight: 300;
+}
+
+/* main */
+
+.container {
+    min-width: 200px;
+    width: 30%;
+    height: 500px;
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    padding: 40px;
+}
+
+/* date */
+
+.date {
+    display: flex;
+    justify-content: space-between;
+}
+
+.full-date {
+    display: flex;
+}
+
+.date-left {
+    font-size: 40px;
+    display: flex;
+    align-items: flex-end;
+    line-height: 36px;
+    vertical-align: bottom;
+}
+
+.date-right {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 5px;
+}
+
+.month, .only-day {
+    text-transform: uppercase;
+}
+
+.only-day {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+/* tasks */
+
+.tasks {
+    margin-top: 40px;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.dot {
+    width: 20px;
+    aspect-ratio: 1;
+    border: 2px solid #eff1f7;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+/* footer */

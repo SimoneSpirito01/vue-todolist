@@ -13,6 +13,50 @@
 
 </head>
 <body>
+
+    <div id="root">
+        <!-- header -->
+        <header>
+            <h1>My ToDo List</h1>
+        </header>
+        <!-- /header -->
+
+        <!-- main -->
+        <main>
+            <div class="container">
+                <!-- data -->
+                <div class="date">
+                    <div class="full-date">
+                        <div class="date-left">
+                            <div class="day">{{myDate}}</div>
+                        </div>
+                        <div class="date-right">
+                            <div class="month">{{myMonth}}</div>
+                            <div class="year">{{myYear}}</div>
+                        </div>
+                    </div>
+                    <div class="only-day">{{myDayName}}</div>
+                </div>
+                <!-- /data -->
+
+                <!-- lista tasks -->
+                <div class="tasks">
+                    <div v-for="(task, i) in tasks" class="task">
+                        <div :class="{ done: task.done }" class="text">{{task.text}}</div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <!-- /lista tasks -->
+            </div>
+        </main>
+        <!-- /main -->
+
+        <!-- footer -->
+        <footer>
+
+        </footer>
+        <!-- /footer -->
+    </div>
     
 
 
