@@ -23,7 +23,8 @@ const app = new Vue({
         myMonth: '',
         myYear: '',
         myDayName: '',
-        newTask: ''
+        newTask: '',
+        overflow: false
     },
     methods: {
         addTask: function(){
@@ -32,6 +33,11 @@ const app = new Vue({
                 this.tasks.push(x);
             }
             this.newTask = '';
+            
+            const allTasks = document.querySelector('.tasks');
+            if (this.isOverflown(allTasks)) {
+                this.overflow = true;
+        }
         },
         taskDone: function(index){
             if (this.tasks[index].done == false){
@@ -42,6 +48,9 @@ const app = new Vue({
         },
         deleteTask: function(index){
             this.tasks.splice(index, 1);
+        },
+        isOverflown: function(element){
+            return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
         }
     },
     mounted() {

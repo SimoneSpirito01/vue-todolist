@@ -11,12 +11,21 @@ body {
     background-color: #f0efe9;
 }
 
+#root {
+    height: 100vh;
+    overflow-y: hidden;
+}
+
 .done {
     text-decoration: line-through;
 }
 
 .visible {
     display: inline-block !important;
+}
+
+.overflow {
+    width: calc(100% - 50px) !important;
 }
 
 /* header */
@@ -81,18 +90,22 @@ header h1 {
 /* tasks */
 
 .tasks {
+    max-height: 360px;
+    overflow-y: auto;
     margin-top: 40px;
 }
 
 .task {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin: 15px 0;
     cursor: pointer;
 }
 
 .task .text {
-    width: calc(100% - 25px);
+    width: calc(100% - 42px);
+    word-wrap: break-word;
+    padding-right: 5px;
 }
 
 .manage-task {
@@ -125,7 +138,7 @@ header h1 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 40px;
+    left: 32px;
 }
 
 .delete-task i {
@@ -166,35 +179,4 @@ p {
     bottom: -50px;
     transform: translate(-50%);
     z-index: 1;
-}
-
-/* media */
-
-@media (max-width: 600px){
- 
-    #root {
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    header h1 {
-        margin-top: 30px;
-    }
-
-    .tasks {
-        max-height: 400px;
-        overflow-y: auto;
-    }
-
-    .task {
-        justify-content: flex-start;
-    }
-
-    .task .text {
-        width: calc(100% - 50px);
-        word-wrap: break-word;
-        padding-right: 5px;
-    }
-
-
 }
