@@ -15,6 +15,10 @@ body {
     text-decoration: line-through;
 }
 
+.visible {
+    display: inline-block !important;
+}
+
 /* header */
 
 header h1 {
@@ -84,14 +88,54 @@ header h1 {
     display: flex;
     justify-content: space-between;
     margin: 15px 0;
+    cursor: pointer;
+}
+
+.task .text {
+    width: calc(100% - 25px);
+}
+
+.manage-task {
+    position: relative;
 }
 
 .dot {
-    width: 20px;
+    width: 25px;
     aspect-ratio: 1;
+    line-height: 20px;
+    text-align: center;
     border: 2px solid #eff1f7;
     border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dot i, .delete-task i {
+    font-size: 12px;
+    display: none;
+}
+
+.dot i::before {
+    vertical-align: center;
+}
+
+.delete-task {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 40px;
+}
+
+.delete-task i {
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+}
+
+p {
+    margin-top: 30px;
 }
 
 /* add task */
@@ -121,7 +165,6 @@ header h1 {
     left: 50%;
     bottom: -50px;
     transform: translate(-50%);
-    cursor: pointer;
 }
 
 /* footer */

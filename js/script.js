@@ -3,19 +3,19 @@ const app = new Vue({
     data: {
         tasks: [
             {
-                text: 'fare la spesa',
+                text: 'Fare la spesa',
                 done: false
             },
             {
-                text: 'comprare il latte',
+                text: 'Comprare il latte',
                 done: false
             },
             {
-                text: 'andare in farmacia',
+                text: 'Andare in farmacia',
                 done: false
             },
             {
-                text: 'fare lavatrice',
+                text: 'Fare lavatrice',
                 done: false
             }
         ],
@@ -27,11 +27,21 @@ const app = new Vue({
     },
     methods: {
         addTask: function(){
-            if (this.newTask != ''){
+            if (this.newTask.split(" ").join("") != ''){
                 const x = {text: this.newTask, done: false};
                 this.tasks.push(x);
-                this.newTask = '';
             }
+            this.newTask = '';
+        },
+        taskDone: function(index){
+            if (this.tasks[index].done == false){
+                this.tasks[index].done = true;
+            } else {
+                this.tasks[index].done = false;
+            }
+        },
+        deleteTask: function(index){
+            this.tasks.splice(index, 1);
         }
     },
     mounted() {

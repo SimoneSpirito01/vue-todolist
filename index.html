@@ -40,12 +40,16 @@
                 <!-- /data -->
 
                 <!-- lista tasks -->
-                <div class="tasks">
+                <div v-if="tasks.length > 0" class="tasks">
                     <div v-for="(task, i) in tasks" class="task">
-                        <div :class="{ done: task.done }" class="text">{{task.text}}</div>
-                        <div class="dot"></div>
+                        <div :class="{ done: task.done }" class="text" @click="taskDone(i)">{{task.text}}</div>
+                        <div class="manage-task">
+                            <div class="dot" @click="taskDone(i)"><i :class="{ visible: task.done }" class="fas fa-check"></i></div>
+                            <div class="delete-task"><i :class="{ visible: task.done }" class="fas fa-times" @click="deleteTask(i)"></i></div>
+                        </div>
                     </div>
                 </div>
+                <p v-else>Complimenti! hai svolto tutte le task per oggi.</p>
                 <!-- /lista tasks -->
 
                 <!-- add task -->
