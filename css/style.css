@@ -170,7 +170,7 @@ p {
 
 /* media */
 
-@media (max-width: 400px){
+@media (max-width: 600px){
  
     #root {
         height: 100vh;
