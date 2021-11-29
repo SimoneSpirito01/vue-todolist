@@ -34,6 +34,7 @@ header h1 {
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     padding: 40px;
+    position: relative;
 }
 
 /* date */
@@ -93,5 +94,34 @@ header h1 {
     cursor: pointer;
 }
 
+/* add task */
+
+.add-task input {
+    display: block;
+    margin: 30px auto;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.add-task input::placeholder {
+    text-align: center;
+}
+
+.plus {
+    font-size: 40px;
+    color: white;
+    width: 90px;
+    aspect-ratio: 1;
+    line-height: 90px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #4fe3a4;
+    position: absolute;
+    left: 50%;
+    bottom: -50px;
+    transform: translate(-50%);
+    cursor: pointer;
+}
 
 /* footer */

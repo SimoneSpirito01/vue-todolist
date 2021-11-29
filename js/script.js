@@ -22,10 +22,17 @@ const app = new Vue({
         myDate: '',
         myMonth: '',
         myYear: '',
-        myDayName: ''
+        myDayName: '',
+        newTask: ''
     },
     methods: {
-
+        addTask: function(){
+            if (this.newTask != ''){
+                const x = {text: this.newTask, done: false};
+                this.tasks.push(x);
+                this.newTask = '';
+            }
+        }
     },
     mounted() {
         const d = new Date();

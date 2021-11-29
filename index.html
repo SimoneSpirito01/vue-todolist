@@ -47,6 +47,16 @@
                     </div>
                 </div>
                 <!-- /lista tasks -->
+
+                <!-- add task -->
+                <div class="add-task">
+                    <input v-model="newTask" type="text" placeholder="Digita la nuova task" @keyup.enter="addTask">
+                </div>
+
+                <div @click="addTask" class="plus"><i class="fas fa-plus"></i></div>
+                <!-- /add task -->
+
+                
             </div>
         </main>
         <!-- /main -->
